@@ -1,8 +1,9 @@
 .container {
     display: flex;
     justify-content: space-between;
-    margin: 20px 20px;
+    margin: 40px 20px;
     gap: 20px;
+    height: 60vh;
     
 }
 
@@ -13,16 +14,21 @@
 }
 
 .container .intro {
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     position: relative;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
 }
 
 .container h1 {
     position: absolute;
-    top: 10px;
+    top: 30px;
+   
 }
 
  .btn {

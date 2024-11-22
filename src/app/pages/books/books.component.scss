@@ -1,0 +1,38 @@
+// .container{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 22px;
+// }
+.library-books{
+ display: flex;
+ flex-wrap: wrap;
+ gap: 20px;
+ padding: 20px;
+ justify-content: center;
+ background-color: #f4f4f4;
+ margin-bottom:33px;
+}
+.library-book{
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+background-color: #fff;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0 , 0, 0, 0.1);
+width: 300px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.library-book:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0 , 0 , 0, 0.2);
+}
+
+strong{
+   font-size: 1.1rem;
+   color: #333;
+   margin-right: 10px;
+}

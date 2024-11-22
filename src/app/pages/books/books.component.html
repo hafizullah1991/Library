@@ -1,1 +1,21 @@
+<div class="container">
+    
+    <h2 style="text-align: center; font-size: 29px;">Our available books </h2>
+    <div class="library-books">
+ 
+@for(book of library(); track book){
+ <div class="library-book">
+<div class="author"><strong>Author</strong>{{book.author}}</div>
+<div class="title"><strong>Genre</strong>{{book.title}}</div>
+<div class="description"><strong>Description</strong>{{book.description}}</div>
+<div class="id"><strong>ID</strong>{{book.id}}</div>
+<div class="inStock"><strong>InStock</strong>{{book.inStock}}</div>
+<div class="genre"><strong>Genre</strong>{{book.genre}}</div>
+<div class="price"><strong>Price</strong>{{book.price}}</div>
 
+ </div>
+}
+
+    </div>
+
+</div>

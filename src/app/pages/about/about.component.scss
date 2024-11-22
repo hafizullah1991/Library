@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+   padding: 0;
+   margin: 0;
+}
+
+
+
+.employee {
+    width: 500px;
+    height: 100px;
+    background-color: wheat;
+    border-radius: 0 20px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column; /* Aligns content vertically */
+    align-items: flex-start; /* Aligns the content to the left */
+    justify-content: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+.employee > div {
+    display: flex;
+    justify-content: flex-start; /* Ensures `strong` is on the left */
+    gap: 10px; /* Adds space between `strong` and text */
+    width: 100%;
+}
+
+strong {
+    margin-right: 10px; /* Ensures spacing between strong and content */
+    min-width: 100px; /* Ensures consistent alignment for all labels */
+    text-align: left;
+}
