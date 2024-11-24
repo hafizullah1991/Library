@@ -1,3 +1,52 @@
+
+
+
+<div class="containerForm">
+   <h1>Menue form</h1>
+   <form [formGroup] ="menuFrom" (ngSubmit)="addItem()" >
+       <div class="input-container">
+           <label for = "author">Author</label>
+           <input type="text"  formControlName="author" placeholder="Author">
+
+           <label for = "title">Title</label>
+           <input type="text" formControlName ="title" placeholder="Title">
+
+           <label for = "id">ID</label>
+           <input type="number" formControlName="id" placeholder="id">
+           
+           <label for = "inStock">InStock</label>
+           <input type="text" formControlName="inStock" placeholder="InStock">
+
+           <label for = "genre">Genre</label>
+           <input type="text" formControlName="genre" placeholder="genre">
+
+           <label for = "description">Description</label>
+           <textarea name="description" role="5" formControlName = "description"></textarea>
+
+           <label for = "price">Price</label>
+           <input type="text" formControlName="price" placeholder="price">
+       </div>
+       <button type="submit">Add Item</button>
+   </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="menuItem-container">
+
+   
 <div class="container">
     
     <h2 style="text-align: center; font-size: 29px;">Our available books </h2>
@@ -5,6 +54,7 @@
  @if(showData()) {
 @for(book of library(); track book){
  <div class="library-book">
+   
 <div class="author"><strong>Author</strong>{{book.author}}</div>
 <div class="title"><strong>Titile</strong>{{book.title}}</div>
 <div class="description"><strong>Description</strong>{{book.description}}</div>
@@ -12,7 +62,8 @@
 <div class="inStock"><strong>InStock</strong>{{book.inStock}}</div>
 <div class="genre"><strong>Genre</strong>{{book.genre}}</div>
 <div class="price"><strong>Price</strong>{{book.price}}</div>
-
+<button class="btn-delete" (click)="deleteItem(book.id)">delete</button>
+<button class="btn-edit" (click)="deleteItem(book.id)">Edit</button>
  </div>
 }
 
@@ -27,5 +78,38 @@
     }
  }
     </div>
-
+<!--  this is modal for pop up menu when edit is clicked -->
 </div>
+<div class="modal"> 
+   
+   <div class="containerForm">
+      <h1>Menue form</h1>
+      <form [formGroup] ="menuFrom" (ngSubmit)="updateItem()" >
+          <div class="input-container">
+              <label for = "author">Author</label>
+              <input type="text"  formControlName="author" placeholder="Author">
+   
+              <label for = "title">Title</label>
+              <input type="text" formControlName ="title" placeholder="Title">
+   
+              <label for = "id">ID</label>
+              <input type="number" formControlName="id" placeholder="id">
+              
+              <label for = "inStock">InStock</label>
+              <input type="text" formControlName="inStock" placeholder="InStock">
+   
+              <label for = "genre">Genre</label>
+              <input type="text" formControlName="genre" placeholder="genre">
+   
+              <label for = "description">Description</label>
+              <textarea name="description" role="5" formControlName = "description"></textarea>
+   
+              <label for = "price">Price</label>
+              <input type="text" formControlName="price" placeholder="price">
+          </div>
+          <button type="submit">Update Item</button>
+      </form>
+   </div>
+</div>
+</div>
+

@@ -1,10 +1,76 @@
-// .container{
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     font-size: 22px;
-// }
+// form style 
+
+.containerForm{
+min-height: 300px;
+align-items: center;
+width: 100%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  
+  h1{
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+      color: #333;
+  }
+  .input-container{
+      display: flex;
+      flex-direction: column;
+     gap: 15px;
+
+  }
+  label{
+      font-size: 16px;
+      font-weight: bold;
+      color: #555;
+  
+  }
+  input, textarea{
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+  }
+  textarea{
+      resize: vertical;
+      min-height: 50px;
+      max-height: 150px;
+      
+  }
+  
+  button{
+      width: 200px;
+      padding: 10px;
+      margin: 10px;
+      font-size: 20px;
+      color: white;
+      font-weight: bolder;
+      background-color: #007bff;
+      border: none;
+      border-radius: 18px;
+      cursor: pointer;
+      display: block;
+      margin: 10px auto;
+
+      &:hover{
+      background-color: #0056b3;
+  } 
+  }
+ 
+}
+
+
+
+
+
+
 .library-books{
  display: flex;
  flex-wrap: wrap;
@@ -47,3 +113,44 @@ strong{
     content: "loading...";
   }
   @keyframes l1 {to{opacity: 0}}
+
+  .btn-delete {
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 10px;
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #D32F2F; /* Deep Red */
+    font-size: 1.4rem;
+    font-weight: bolder;
+    background-color: #D32F2F; /* Deep Red */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .btn-delete:hover {
+    background-color: white;
+    color: #D32F2F; /* Deep Red */
+    transform: translateY(-5px);
+  }
+  .btn-edit {
+    margin: 0 auto;
+    align-items: center;
+    margin-top: 10px;
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #4CAF50; /* Green */
+    font-size: 1.4rem;
+    font-weight: bolder;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .btn-edit:hover {
+    background-color: white;
+    color: #4CAF50; /* Green */
+    transform: translateY(-5px);
+  }
