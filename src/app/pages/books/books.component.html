@@ -2,11 +2,11 @@
     
     <h2 style="text-align: center; font-size: 29px;">Our available books </h2>
     <div class="library-books">
- 
+ @if(showData()) {
 @for(book of library(); track book){
  <div class="library-book">
 <div class="author"><strong>Author</strong>{{book.author}}</div>
-<div class="title"><strong>Genre</strong>{{book.title}}</div>
+<div class="title"><strong>Titile</strong>{{book.title}}</div>
 <div class="description"><strong>Description</strong>{{book.description}}</div>
 <div class="id"><strong>ID</strong>{{book.id}}</div>
 <div class="inStock"><strong>InStock</strong>{{book.inStock}}</div>
@@ -16,6 +16,16 @@
  </div>
 }
 
+ }@else {
+    @if(showError()){
+   <div style="font-size: 33px; font-weight: bolder;" class="error">
+    There is an error ! please check the api 
+   </div>
+    }
+    @else {
+       <div class="loader"> </div>
+    }
+ }
     </div>
 
 </div>
