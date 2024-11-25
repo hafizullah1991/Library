@@ -60,7 +60,10 @@ public deleteItem(id: any): void{
   })
 }
 
-
+//  update item
+public updateItem():void{
+  // this.http.patch<DataInterface>(this.api + `/${id}`, this.)
+}
 
 
     ngOnInit(): void {
@@ -88,10 +91,4 @@ public deleteItem(id: any): void{
             }, 1000);
           }
 
-          // public addItem(): void{
-          //   this.http.post<DataInterface>(this.api.Icecream)
-          // }
-
-
-          
           }
