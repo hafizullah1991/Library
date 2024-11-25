@@ -1,59 +1,91 @@
-.container{
-    max-width: 600px;
+.body{
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+    height: 70vh;
+    border: 4px solid orchid;
+    align-items: center;
+    margin: 60px auto;
    
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
-    h1{
-        text-align: center;
-        margin-bottom: 20px;
-        font-family: Arial, sans-serif;
-        color: #333;
+   
+} 
+.container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 45%;
+        height: 100%;
+        background-color: rgb(144, 54, 228);
+    }
+    .container h1{
+        font-size: 23px;
+        color: wheat;
     }
     .input-container{
         display: flex;
         flex-direction: column;
-       gap: 15px;
-
-    }
-    label{
-        font-size: 16px;
-        font-weight: bold;
-        color: #555;
-    }
-    input, textarea{
-        
-        padding: 10px;
-        font-size: 14px;
-    }
-    textarea{
-        resize: vertical;
-        min-height: 100px;
-        max-height: 300px;
-        
+        width: 300px;
+        height: 300px;
+        gap: 8px;
+        color: white;
+       
     }
     
-    button{
-        width: 200px;
-        padding: 10px;
-        margin: 10px;
-        font-size: 20px;
-        color: white;
-        font-weight: bolder;
-        background-color: #007bff;
-        border: none;
-        border-radius: 18px;
-        cursor: pointer;
-        display: block;
-        margin: 10px auto;
-
-        &:hover{
-        background-color: #0056b3;
-    } 
+    .container input, textarea{
+        border:none;
+        border-bottom: 2px solid wheat;
+        background-color: transparent;
+         padding: 5px;
+         outline: none;
+         color: white
+        
     }
+    .container input:hover, 
+    .container textarea:hover{
+        border:1px solid wheat;
+    }
+    .container textarea{
+        font-size: 14px;
+        height: 120px;
+        resize: none;
+    }
+    .input-container ::placeholder{
+       color: whitesmoke;
+    }
+    button{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 10px;
+        width: 44%;
+        font-weight: bold;
+        border-radius: 12px;
+        border: none;
+        background-color: wheat;
+    }
+    button:hover{
+        color: wheat;
+        background-color: black;
+    }
+   .webInfo{
+    width: 55%;
+    height: 100%;
+    // justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    border: 2px solid black;
+  
+   }
+   .webInfo h1{
+    font-size: 30px;
+   margin-top: 40px;
    
-}
+   }
+   .contactItem{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+   }
+   

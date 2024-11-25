@@ -1,22 +1,37 @@
-
-
-<div class="container">
-    <h1>Contact Us</h1>
+<div class="body">
+    <div class="container">
+    <h1>Send us message</h1>
     <form [formGroup] ="contactFrom" (ngSubmit)="submitForm()" >
         <div class="input-container">
-            <label for = "name">Name</label>
-            <input type="text"  formControlName="name" placeholder="Name">
+            <label for = "name"> </label>
+            <input type="text"  formControlName="name" placeholder="Your Name">
 
-            <label for = "email">Email</label>
-            <input type="text" formControlName ="email" placeholder="Name">
+            <label for = "email"> </label>
+            <input type="text" formControlName ="email" placeholder="Your Email">
 
-            <label for = "phone">Phone</label>
-            <input type="text" formControlName="phone" placeholder="Name">
+            <label for = "phone"> </label>
+            <input type="text" formControlName="phone" placeholder="Your Phone">
 
-            <label for = "message">Message</label>
-            <textarea name="message" role="6" formControlName = "message"></textarea>
+            <label for = "message">  </label>
+            <textarea name="message" role="6"  formControlName = "message" placeholder="Type your meessage"></textarea>
         
         </div>
         <button type="submit">Submit</button>
     </form>
 </div>
+<div class="webInfo">
+    <h1>Contact Us</h1>
+<p>We are open for any suggestions or just to have chat</p>
+<br>
+<div class="contactItem">
+@for(contact of contactInfo(); track contact){
+    <div class="address" ><strong></strong>{{contact.type}}</div>
+    <div class="email"   ><strong></strong>{{contact.value}}</div>
+    <div class="phone"   ><strong> </strong>{{contact.phone}}</div>
+        <div class="website"><strong></strong>{{contact.website}}</div>
+}
+</div>
+
+</div>
+</div>
+

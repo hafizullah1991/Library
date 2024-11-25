@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { FormControl, FormGroup, FormControlName ,ReactiveFormsModule, FormsModule} from '@angular/forms';
 @Component({
   selector: 'app-contact',
@@ -24,4 +24,26 @@ ngOnInit(): void {
 public submitForm(): void{
   console.log(this.contactFrom.value)
 }
+public contactInfo = signal<any>([
+  {
+    type: 'Address',
+    icon: 'Address.png',
+    value: '2014 Olivera, APT: 22, Walnut Creek, 93420'
+  },
+  {
+    type: 'Email',
+      icon: 'email.png',
+      value: 'Kawaki@kawaki.com',
+  },
+  {
+    type: 'Phone',
+      icon: 'phone.jpg',
+      value: '925494949',
+  },
+  {
+    type: 'Website',
+    icon: 'website.png',
+    value: 'www.kawaki.com',
+  }
+])
 }
