@@ -1,12 +1,12 @@
 .body{
     display: flex;
     justify-content: space-between;
-    width: 80vw;
-    height: 70vh;
-    border: 4px solid orchid;
+    width: 70vw;
+    height: 80vh;
     align-items: center;
-    margin: 60px auto;
-   
+    margin: 42px auto;
+   box-shadow: 3px 4px 6px rgba(0, 0, 0, 0.2);
+   border-radius: 0 33px;
    
 } 
 .container{
@@ -17,6 +17,7 @@
         width: 45%;
         height: 100%;
         background-color: rgb(144, 54, 228);
+        border-radius: 0 34px;
     }
     .container h1{
         font-size: 23px;
@@ -38,7 +39,9 @@
         background-color: transparent;
          padding: 5px;
          outline: none;
-         color: white
+         color: white;
+         background-color: transparent;
+         font-size: 17px;
         
     }
     .container input:hover, 
@@ -69,23 +72,35 @@
         background-color: black;
     }
    .webInfo{
+    display: flex;
+    flex-direction: column;
     width: 55%;
     height: 100%;
-    // justify-content: center;
     text-align: center;
     margin: 0 auto;
-    border: 2px solid black;
+    
   
    }
    .webInfo h1{
     font-size: 30px;
-   margin-top: 40px;
+    margin-top: 50px;
    
+   }
+   .webInfo p{
+    font-weight: bold;
+    font-size: 20px;
    }
    .contactItem{
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    justify-content: flex-start;
+    gap: 30px;
+    
 
    }
-   
+
+strong{
+    
+    margin: 8px;
+    font-size: 15px;
+}

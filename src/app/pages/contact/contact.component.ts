@@ -32,17 +32,14 @@ public contactInfo = signal<any>([
   },
   {
     type: 'Email',
-      icon: 'email.png',
       value: 'Kawaki@kawaki.com',
   },
   {
     type: 'Phone',
-      icon: 'phone.jpg',
       value: '925494949',
   },
   {
     type: 'Website',
-    icon: 'website.png',
     value: 'www.kawaki.com',
   }
 ])
