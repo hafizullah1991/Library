@@ -67,41 +67,72 @@ flex-direction: column;
 }
 
 
+// stylig the books
 
-
-
-
-.library-books{
- display: flex;
- flex-wrap: wrap;
- gap: 20px;
- padding: 20px;
- justify-content: center;
- background-color: #f4f4f4;
- margin-bottom:33px;
+.library-books {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px;
+  justify-content: center;
+  // background-color: #e9ecef; 
+  margin-bottom: 40px;
+  border-radius: 10px;
+  // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.library-book{
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-background-color: #fff;
-padding: 15px;
-border-radius: 10px;
-box-shadow: 0 4px 6px rgba(0 , 0, 0, 0.1);
-width: 300px;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+.library-book {
+  background-image: url(../../../../public/blueone.jpeg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  height: 350px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  // background: linear-gradient(145deg, #f0f0f0, #e0e0e0); /* Subtle gradient for a refined feel */
 }
 .library-book:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0 , 0 , 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0 , 0 , 0, 0.2);
+}
+ .title, .author{
+  margin: 15px auto;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: wheat;
+  margin-bottom: 10px;
+
+}
+.author{
+  color: gold;
+}
+ .description{
+  font-size: 14px;
+  color: #f7f7f7;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  flex-grow: 1;
+  line-height: 1.5;
+}
+.genre, .price{
+font-size: 14px;
+color: orange;
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.price{
+  color: #FFD700;
 }
 
-strong{
-   font-size: 1.1rem;
-   color: #333;
-   margin-right: 10px;
-}
 .loader {
     font-weight: bold;
     font-family: sans-serif;
@@ -156,8 +187,46 @@ strong{
   }
   // modal 
 
-  .modal{
-    padding: 50px;
-    background-color: white;
+
+  // menu
+  .menu-container{
+    position: relative;
+    display: inline-block;
     
   }
+  .bi-three-dots-vertical {
+    font-size: 40px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease-in-out;
+  }
+  .bi-three-dots-vertical:hover{
+    transform: scale(1.2);
+  }
+  .dropdown-menu{
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    background-color: #fff;
+    color: black;
+    border-radius: 6px;
+    border: 1px solid #444;
+    z-index: 10;
+    min-width: 120px;
+    padding: 10px 0;
+    text-align: left;
+  }
+  .dropdown-menu li{
+    padding: 10px 20px;
+    cursor: pointer;
+    list-style-type: none;
+    transition: background-Color 0.2s ease-in-out;
+  }
+  .dropdown-menu li:hover{
+    background-color: #555;
+    color: wheat;
+
+  }
+  // .menu-container:hover .dropdown-menu {
+  //   display: block;
+  // }

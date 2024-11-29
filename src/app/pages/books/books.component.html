@@ -44,28 +44,36 @@
 
 
 
-<div class="menuItem-container">
+   <div class="menuItem-container">
 
+      
+   <div class="container">
+      
+      <h2 style="text-align: center; font-size: 29px;">Our available books </h2>
+      <div class="library-books">
+   @if(showData()) {
+   @for(book of library(); track book){
+   <div class="library-book">
+      
+      <div class="title"><strong> </strong>{{book.title}}</div>
+   <div class="author"><strong></strong>{{book.author}}</div>
+   <div class="description"><strong> </strong>{{book.description}}</div>
+   <div class="genre"><strong> </strong>{{book.genre}}</div>
+   <div class="price"><strong> </strong>${{book.price}}</div>
    
-<div class="container">
-    
-    <h2 style="text-align: center; font-size: 29px;">Our available books </h2>
-    <div class="library-books">
- @if(showData()) {
-@for(book of library(); track book){
- <div class="library-book">
-   
-<div class="author"><strong>Author</strong>{{book.author}}</div>
-<div class="title"><strong>Titile</strong>{{book.title}}</div>
-<div class="description"><strong>Description</strong>{{book.description}}</div>
-<div class="id"><strong>ID</strong>{{book.id}}</div>
-<div class="inStock"><strong>InStock</strong>{{book.inStock}}</div>
-<div class="genre"><strong>Genre</strong>{{book.genre}}</div>
-<div class="price"><strong>Price</strong>{{book.price}}</div>
-<button class="btn-delete" (click)="deleteItem(book.id)">delete</button>
-<button class="btn-edit" (click)="deleteItem(book.id)">Edit</button>
- </div>
-}
+   <!-- it's the THree dot menu  using boostrap -->
+    @if(showThreeDotMenu()){
+ <div class="dropdown-menu">
+         <li> Edit</li>
+         <li>Delete</li>
+      </div>
+    }
+   <div class="menu-container">
+      <i class="bi bi-three-dots-vertical" (click)="showMenu(book.id)"></i>
+     
+   </div>
+   </div>
+   }
 
  }@else {
     @if(showError()){

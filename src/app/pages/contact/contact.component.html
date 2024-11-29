@@ -18,18 +18,18 @@
         </div>
         <button type="submit">Submit</button>
     </form>
-</div>
-<div class="webInfo">
-    <h1>Contact Us</h1>
-<p>We are open for any suggestions or just to have chat</p>
-<br>
-<div class="contactItem">
-@for(contact of contactInfo(); track contact){
-    <div class="address" ><strong>{{contact.type}}</strong>{{contact.value}}</div>
-   
-}
-</div>
+        </div>
+        <div class="webInfo">
+            <h1>Contact Us</h1>
+        <p>We are open for any suggestions or just to have chat</p>
+        <br>
+        <div class="contactItem">
+        @for(contact of contactInfo(); track contact){
+            <div class="address" ><strong>{{contact.type}}</strong>{{contact.value}}</div>
+        
+        }
+        </div>
 
-</div>
-</div>
+        </div>
+        </div>
 

@@ -20,6 +20,12 @@ public library = signal<DataInterface[]>([]) //keep track of changes and update 
 public showData = signal<boolean>(false);
 public showError = signal<boolean>(false)
 
+
+// three dot menu 
+public showThreeDotMenu = signal<boolean>(false)
+public showMenu(bookId: number):void{
+  this.showThreeDotMenu.set()
+}
 // for form section 
 public menuFrom = new FormGroup({
   author: new FormControl(''),
