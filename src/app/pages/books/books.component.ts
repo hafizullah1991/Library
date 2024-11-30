@@ -20,15 +20,26 @@ public library = signal<DataInterface[]>([]) //keep track of changes and update 
 public showData = signal<boolean>(false);
 public showError = signal<boolean>(false)
 
+// showing menu of form to pop up when click
+public showModalForm = signal<boolean>(false)
 
 // three dot menu 
 public showThreeDotMenu = signal<boolean>(false)
-public showMenu(bookId: number):void{
-  this.showThreeDotMenu.set()
-}
+
 // for form section 
 public menuFrom = new FormGroup({
-  author: new FormControl(''),
+  author: new FormControl('Hafiz'),
+  title: new FormControl(''),
+  id: new FormControl(''),
+  inStock: new FormControl(''),
+  genre: new FormControl(''),
+  description: new FormControl(''),
+  price: new FormControl('')
+})
+
+//for modal saction to pop up
+public menuFromEdit = new FormGroup({
+  author: new FormControl('jef'),
   title: new FormControl(''),
   id: new FormControl(''),
   inStock: new FormControl(''),
@@ -38,6 +49,15 @@ public menuFrom = new FormGroup({
 })
 
 
+public openMenu():void{
+  this.showThreeDotMenu.set(true)
+  }
+  
+// this function shows that when the Edit button clicked then call this function.
+public showModalMenu(): void{
+this.showModalForm.set(true)
+}
+// for the form that add item button 
 public addItem(): void{
   this.http.post<DataInterface>(this.api, this.menuFrom.value).subscribe({
     next : Response =>{

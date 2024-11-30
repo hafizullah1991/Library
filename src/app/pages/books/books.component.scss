@@ -3,10 +3,7 @@
 .containerForm{
 min-height: 300px;
 align-items: center;
-width: 100%;
-display: flex;
-justify-content: center;
-flex-direction: column;
+ width: 50%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ddd;
@@ -227,6 +224,4 @@ justify-content: center;
     color: wheat;
 
   }
-  // .menu-container:hover .dropdown-menu {
-  //   display: block;
-  // }
+ 
