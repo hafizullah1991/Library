@@ -1,106 +1,98 @@
-.body{
-    display: flex;
-    justify-content: space-between;
-    width: 70vw;
-    height: 80vh;
-    align-items: center;
-    margin: 42px auto;
-   box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.1);
-   border-radius: 0 33px;
-   
-} 
-.container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 45%;
-        height: 100%;
-        background-color: rgb(144, 54, 228);
-        border-radius: 0 34px;
-    }
-    .container h1{
-        font-size: 23px;
-        color: wheat;
-    }
-    .input-container{
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        height: 300px;
-        gap: 8px;
-        color: white;
-       
-    }
-    
-    .container input, textarea{
-        border:none;
-        border-bottom: 2px solid wheat;
-        background-color: transparent;
-         padding: 5px;
-         outline: none;
-         color: white;
-         background-color: transparent;
-         font-size: 17px;
-        
-    }
-    .container input:hover, 
-    .container textarea:hover{
-        border:1px solid wheat;
-    }
-    .container textarea{
-        font-size: 14px;
-        height: 120px;
-        resize: none;
-    }
-    .input-container ::placeholder{
-       color: whitesmoke;
-    }
-    button{
-        display: flex;
-        justify-content: center;
-        margin: 0 auto;
-        padding: 10px;
-        width: 44%;
-        font-weight: bold;
-        border-radius: 12px;
-        border: none;
-        background-color: wheat;
-    }
-    button:hover{
-        color: wheat;
-        background-color: black;
-    }
-   .webInfo{
-    display: flex;
-    flex-direction: column;
-    width: 55%;
-    height: 100%;
-    text-align: center;
-    margin: 0 auto;
-    
-  
-   }
-   .webInfo h1{
-    font-size: 30px;
-    margin-top: 50px;
-   
-   }
-   .webInfo p{
-    font-weight: bold;
-    font-size: 20px;
-   }
-   .contactItem{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 30px;
-    
+.body {
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+  height: 80vh;
+  align-items: center;
+  margin: 42px auto;
+  box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.1);
+  border-radius: 0 33px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 100%;
+  background-color: rgb(144, 54, 228);
+  border-radius: 0 34px;
+}
+.container h1 {
+  font-size: 23px;
+  color: wheat;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  gap: 8px;
+  color: white;
+}
 
-   }
+.container input,
+textarea {
+  border: none;
+  border-bottom: 2px solid wheat;
+  background-color: transparent;
+  padding: 5px;
+  outline: none;
+  color: white;
+  background-color: transparent;
+  font-size: 17px;
+}
+.container input:hover,
+.container textarea:hover {
+  border: 1px solid wheat;
+}
+.container textarea {
+  font-size: 14px;
+  height: 120px;
+  resize: none;
+}
+.input-container ::placeholder {
+  color: whitesmoke;
+}
+button {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 10px;
+  width: 44%;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  background-color: wheat;
+}
+button:hover {
+  color: wheat;
+  background-color: black;
+}
+.webInfo {
+  display: flex;
+  flex-direction: column;
+  width: 55%;
+  height: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+.webInfo h1 {
+  font-size: 30px;
+  margin-top: 50px;
+}
+.webInfo p {
+  font-weight: bold;
+  font-size: 20px;
+}
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+}
 
-strong{
-    
-    margin: 8px;
-    font-size: 15px;
+strong {
+  margin: 8px;
+  font-size: 15px;
 }

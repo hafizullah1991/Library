@@ -1,136 +1,125 @@
+@if(showMenuForm()){
+   <div class="formMenu">
+  <div class="containerForm">
+   <div class="close" (click)="closeMenuForm()">
+      X
+   </div>
+    <h1>Menue form</h1>
+    <form [formGroup]="menuFrom" (ngSubmit)="addItem()">
+      <div class="input-container">
+        <label for="author">Author</label>
+        <input type="text" formControlName="author" placeholder="Author" />
 
+        <label for="title">Title</label>
+        <input type="text" formControlName="title" placeholder="Title" />
 
-            <div class="formMenu">
-            <div class="containerForm">
-               <h1>Menue form</h1>
-               <form [formGroup] ="menuFrom" (ngSubmit)="addItem()" >
-                  <div class="input-container">
-                     <label for = "author">Author</label>
-                     <input type="text"  formControlName="author" placeholder="Author">
+        <label for="id">ID</label>
+        <input type="number" formControlName="id" placeholder="id" />
 
-                     <label for = "title">Title</label>
-                     <input type="text" formControlName ="title" placeholder="Title">
+        <label for="inStock">InStock</label>
+        <input type="text" formControlName="inStock" placeholder="InStock" />
 
-                     <label for = "id">ID</label>
-                     <input type="number" formControlName="id" placeholder="id">
-                     
-                     <label for = "inStock">InStock</label>
-                     <input type="text" formControlName="inStock" placeholder="InStock">
+        <label for="genre">Genre</label>
+        <input type="text" formControlName="genre" placeholder="genre" />
 
-                     <label for = "genre">Genre</label>
-                     <input type="text" formControlName="genre" placeholder="genre">
+        <label for="description">Description</label>
+        <textarea
+          name="description"
+          role="5"
+          formControlName="description"
+        ></textarea>
 
-                     <label for = "description">Description</label>
-                     <textarea name="description" role="5" formControlName = "description"></textarea>
+        <label for="price">Price</label>
+        <input type="text" formControlName="price" placeholder="price" />
+      </div>
+      <button type="submit">Add Item</button>
+    </form>
+  </div>
+</div>
 
-                     <label for = "price">Price</label>
-                     <input type="text" formControlName="price" placeholder="price">
-                  </div>
-                  <button type="submit">Add Item</button>
-               </form>
-            </div> 
+}
+
+<div class="menuItem-container">
+  <div class="container">
+    <h2 style="text-align: center; font-size: 29px">Our available books</h2>
+    <div class="library-books">
+      @if (showData()) {
+        @for (book of library(); track book) {
+          <div class="library-book">
+            <div class="title"><strong> </strong>{{ book.title }}</div>
+            <div class="author"><strong></strong>{{ book.author }}</div>
+            <div class="description">
+              <strong> </strong>{{ book.description }}
             </div>
+            <div class="genre"><strong> </strong>{{ book.genre }}</div>
+            <div class="price"><strong> </strong>${{ book.price }}</div>
 
-
-
-
-
-
-
-
-
-            
-               <div class="menuItem-container">
-               <div class="container">
-                  <h2 style="text-align: center; font-size: 29px;">Our available books </h2>
-                  <div class="library-books">
-               @if(showData()) {
-               @for(book of library(); track book){
-               <div class="library-book">
-                  <div class="title"><strong> </strong>{{book.title}}</div>
-               <div class="author"><strong></strong>{{book.author}}</div>
-               <div class="description"><strong> </strong>{{book.description}}</div>
-               <div class="genre"><strong> </strong>{{book.genre}}</div>
-               <div class="price"><strong> </strong>${{book.price}}</div>
-               
-               <!-- it's the THree dot menu  using boostrap -->
-                
-               @if(showThreeDotMenu()){
-            <div class="dropdown-menu">
-                     <li>Edit</li> 
-                     <li >Delete</li>
-                  </div>
-               }
-               <div class="menu-container">
-                  <i class="bi bi-three-dots-vertical" (click)="openMenu()"></i>
-               
-               </div>
-               </div>
-               }
-
-            }@else {
-               @if(showError()){
-               <div style="font-size: 33px; font-weight: bolder;" class="error">
-               There is an error ! please check the api 
-               </div>
-               }
-               @else {
-                  <div class="loader"> </div>
-               }
-            }
-               </div>
-               </div>
-               </div>
-               <!--  this is modal for pop up menu when edit is clicked -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            @if(showModalForm()){
-            <div class="modal"> 
-               <div class="containerForm">
-                  <h1>Menue form</h1>
-                  <form [formGroup] ="menuFrom" (ngSubmit)="updateItem()" >
-                     <div class="input-container">
-                        <label for = "author">Author</label>
-                        <input type="text"  formControlName="author" placeholder="Author">
-               
-                        <label for = "title">Title</label>
-                        <input type="text" formControlName ="title" placeholder="Title">
-               
-                        <label for = "id">ID</label>
-                        <input type="number" formControlName="id" placeholder="id">
-                        
-                        <label for = "inStock">InStock</label>
-                        <input type="text" formControlName="inStock" placeholder="InStock">
-               
-                        <label for = "genre">Genre</label>
-                        <input type="text" formControlName="genre" placeholder="genre">
-               
-                        <label for = "description">Description</label>
-                        <textarea name="description" role="5" formControlName = "description"></textarea>
-               
-                        <label for = "price">Price</label>
-                        <input type="text" formControlName="price" placeholder="price">
-                     </div>
-                     <button type="submit">Update Item</button>
-                  </form>
-               </div>
+            <!-- it's the THree dot menu  using CSS HTML -->
+             <div class="vertical-dots" (click)="openMenu(book.id)">
+                <span></span>
+                <span></span>
+                <span></span>
+                @if(showThreeDotMenu()=== book.id){
+                  <div class="dropdown">
+                  <li (click)="deleteItem(book.id)">Delete</li>
+                  <li (click)="showModalMenu()">Edit</li>
+                  <li (click)="menuForm()">Add Book</li>
+                </div>
+                }
             </div>
+          </div>
+        }
+      } 
+      
+      
+      @else {
+        @if (showError()) {
+          <div style="font-size: 33px; font-weight: bolder" class="error">
+            There is an error ! please check the api
+          </div>
+        } @else {
+          <div class="loader"></div>
+        }
+      }
+    </div>
+  </div>
+</div>
+<!--  this is modal for pop up menu when edit is clicked -->
 
-            }
-            
-            
+@if (showModalForm()) {
+  <div class="modal">
+    <div class="containerForm">
+      
+      <div class="close" (click)="close()">
+         X
+      </div>
+      <h1>Menue form</h1>
+      <form [formGroup]="menuFrom" (ngSubmit)="updateItem()">
+        <div class="input-container">
+          <label for="author">Author</label>
+          <input type="text" formControlName="author" placeholder="Author" />
 
+          <label for="title">Title</label>
+          <input type="text" formControlName="title" placeholder="Title" />
+
+          <label for="inStock">InStock</label>
+          <input type="text" formControlName="inStock" placeholder="InStock" />
+
+          <label for="genre">Genre</label>
+          <input type="text" formControlName="genre" placeholder="genre" />
+
+          <label for="description">Description</label>
+          <textarea
+            name="description"
+            role="5"
+            formControlName="description"
+          ></textarea>
+
+          <label for="price">Price</label>
+          <input type="text" formControlName="price" placeholder="price" />
+        </div>
+        <button type="submit">Update Item</button>
+      </form>
+    </div>
+  </div>
+}

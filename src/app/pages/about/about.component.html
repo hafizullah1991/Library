@@ -1,15 +1,13 @@
-
 <div class="container">
-<h1>Our Emplyees</h1>
-<div class="companyEmployees">
-   @for(employee of userInfo(); track employee ){
-<div class="employee">
-    <div class="name" ><strong>Name</strong>{{employee.name}}</div>
-    <div class="age" ><strong>Age</strong>{{employee.age}}</div>
-    <div class="email" ><strong>Email</strong>{{employee.email}}</div>
-    <div class="bio" ><strong>Bio</strong>{{employee.bio}}</div>
+  <h1>Our Emplyees</h1>
+  <div class="companyEmployees">
+    @for (employee of userInfo(); track employee) {
+      <div class="employee">
+        <div class="name"><strong>Name</strong>{{ employee.name }}</div>
+        <div class="age"><strong>Age</strong>{{ employee.age }}</div>
+        <div class="email"><strong>Email</strong>{{ employee.email }}</div>
+        <div class="bio"><strong>Bio</strong>{{ employee.bio }}</div>
+      </div>
+    }
+  </div>
 </div>
-} 
-</div>
-</div>
-

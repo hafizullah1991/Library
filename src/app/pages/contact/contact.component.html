@@ -1,35 +1,39 @@
 <div class="body">
-    <div class="container">
+  <div class="container">
     <h1>Send us message</h1>
-    <form [formGroup] ="contactFrom" (ngSubmit)="submitForm()" >
-        <div class="input-container">
-            <label for = "name"> </label>
-            <input type="text"  formControlName="name" placeholder="Your Name">
+    <form [formGroup]="contactFrom" (ngSubmit)="submitForm()">
+      <div class="input-container">
+        <label for="name"> </label>
+        <input type="text" formControlName="name" placeholder="Your Name" />
 
-            <label for = "email"> </label>
-            <input type="text" formControlName ="email" placeholder="Your Email">
+        <label for="email"> </label>
+        <input type="text" formControlName="email" placeholder="Your Email" />
 
-            <label for = "phone"> </label>
-            <input type="text" formControlName="phone" placeholder="Your Phone">
+        <label for="phone"> </label>
+        <input type="text" formControlName="phone" placeholder="Your Phone" />
 
-            <label for = "message">  </label>
-            <textarea name="message" role="6"  formControlName = "message" placeholder="Type your meessage"></textarea>
-        
-        </div>
-        <button type="submit">Submit</button>
+        <label for="message"> </label>
+        <textarea
+          name="message"
+          role="6"
+          formControlName="message"
+          placeholder="Type your meessage"
+        ></textarea>
+      </div>
+      <button type="submit">Submit</button>
     </form>
+  </div>
+  <div class="webInfo">
+    <h1>Contact Us</h1>
+    <p>We are open for any suggestions or just to have chat</p>
+    <br />
+    <div class="contactItem">
+      @for (contact of contactInfo(); track contact) {
+        <div class="address">
+          <strong>{{ contact.type }}</strong
+          >{{ contact.value }}
         </div>
-        <div class="webInfo">
-            <h1>Contact Us</h1>
-        <p>We are open for any suggestions or just to have chat</p>
-        <br>
-        <div class="contactItem">
-        @for(contact of contactInfo(); track contact){
-            <div class="address" ><strong>{{contact.type}}</strong>{{contact.value}}</div>
-        
-        }
-        </div>
-
-        </div>
-        </div>
-
+      }
+    </div>
+  </div>
+</div>
