@@ -62,7 +62,7 @@
                 @if(showThreeDotMenu()=== book.id){
                   <div class="dropdown">
                   <li (click)="deleteItem(book.id)">Delete</li>
-                  <li (click)="showModalMenu()">Edit</li>
+                  <li (click)="showModalMenu(book.id)">Edit</li>
                   <li (click)="menuForm()">Add Book</li>
                 </div>
                 }
@@ -94,7 +94,7 @@
          X
       </div>
       <h1>Menue form</h1>
-      <form [formGroup]="menuFrom" (ngSubmit)="updateItem()">
+      <form [formGroup]="menuFormEdit" (ngSubmit)="updateItem()">
         <div class="input-container">
           <label for="author">Author</label>
           <input type="text" formControlName="author" placeholder="Author" />

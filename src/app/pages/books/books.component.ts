@@ -53,8 +53,8 @@ export class BooksComponent implements OnInit {
       this.showMenuForm.set(false)
     }
   //for modal saction to pop up
-  public menuFromEdit = new FormGroup({
-    author: new FormControl('jef'),
+  public menuFormEdit = new FormGroup({
+    author: new FormControl(''),
     title: new FormControl(''),
     id: new FormControl(''),
     inStock: new FormControl(''),
@@ -76,9 +76,51 @@ public close():void{
   }
 
   // this function shows that when the Edit button clicked then call this function.
-  public showModalMenu(): void {
-    this.showModalForm.set(true);
+  public showModalMenu(id: any): void {
+    
+    this.http.get<DataInterface>(this.api +`/${id}`).subscribe({
+      next: response=>{
+        
+        this.menuFormEdit.get('author')?.setValue(response.author.toString())
+        this.menuFormEdit.get('title')?.setValue(response.title)
+        this.menuFormEdit.get('inStock')?.setValue(response.inStock.toString())
+        this.menuFormEdit.get('genre')?.setValue(response.genre?? null) // if  the api didnt return exact genre then show underfined or null 
+        this.menuFormEdit.get('description')?.setValue(response.description)
+        this.menuFormEdit.get('price')?.setValue(response.price?? null)
+        this.menuFormEdit.get('id')?.setValue(response.id.toString())
+        //  we have to add the ID otherwise the update doesnt work update button
+      },
+      error: error =>{
+
+      },
+      complete:() =>{
+        
+        this.showModalForm.set(true);
+      }
+    })
   }
+  //  update item
+  
+  public updateItem(): void {
+  // this.http.put(`${this.api}/${this.menuFormEdit.get('id')?.value}`, this.menuFormEdit.value).subscribe({
+    this.http.put(`${this.api}/${this.menuFormEdit.get('id')?.value}`, this.menuFormEdit.value).subscribe({
+   
+      next: response=>{
+        
+      },
+      error: err=>{
+
+      },
+      complete:()=>{
+        window.location.reload()
+      }
+    })
+
+    
+  }
+
+
+
   // for the form that add item button
   public addItem(): void {
     this.http.post<DataInterface>(this.api, this.menuFrom.value).subscribe({
@@ -102,10 +144,7 @@ public close():void{
     });
   }
 
-  //  update item
-  public updateItem(): void {
-    // this.http.patch<DataInterface>(this.api + `/${id}`, this.)
-  }
+
 
 
   ngOnInit(): void {
