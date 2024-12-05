@@ -7,7 +7,7 @@
 }
 
 .container img {
-  width: 500px;
+  width: 560px;
   height: auto;
   border-radius: 0px 50px;
 }
@@ -33,14 +33,15 @@
   padding: 10px;
   margin: 10px;
   border-radius: 20px;
-  border: none;
+  border: 3px solid transparent;
   cursor: pointer;
   background-color: #eff33e;
   color: black;
   font-weight: bold;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-.container .btn:hover {
+ .btn:hover {
   border: 3px solid orange;
   color: brown;
 }
