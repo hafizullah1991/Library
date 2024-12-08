@@ -1,36 +1,42 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 12px;
-  padding: 0;
-  margin: 0;
+/* About Section */
+.about-section {
+  padding: 20px 0;
+  background-color: #f4f4f4;
 }
 
-.employee {
-  width: 500px;
-  height: 100px;
-  background-color: wheat;
-  border-radius: 0 20px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column; /* Aligns content vertically */
-  align-items: flex-start; /* Aligns the content to the left */
-  justify-content: center;
-  margin: 20px 0;
-  font-size: 1.2rem;
+.about-content {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
 }
 
-.employee > div {
-  display: flex;
-  justify-content: flex-start; /* Ensures `strong` is on the left */
-  gap: 10px; /* Adds space between `strong` and text */
-  width: 100%;
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-strong {
-  margin-right: 10px; /* Ensures spacing between strong and content */
-  min-width: 100px; /* Ensures consistent alignment for all labels */
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Hours & Location Section */
+.hours-location {
   text-align: left;
+  margin-top: 30px;
+}
+
+.hours-location h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.hours-location p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 8px;
 }

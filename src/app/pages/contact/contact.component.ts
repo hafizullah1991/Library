@@ -32,11 +32,11 @@ export class ContactComponent implements OnInit {
     {
       type: 'Address',
       icon: 'Address.png',
-      value: '2014 Olivera, APT: 22, Walnut Creek, 93420',
+      value: '2013 Olivera, APT: 22, concord, 93420',
     },
     {
       type: 'Email',
-      value: 'Kawaki@kawaki.com',
+      value: 'dev@library.com',
     },
     {
       type: 'Phone',
@@ -44,7 +44,7 @@ export class ContactComponent implements OnInit {
     },
     {
       type: 'Website',
-      value: 'www.kawaki.com',
+      value: 'www.hlibrary.com',
     },
   ]);
 }
