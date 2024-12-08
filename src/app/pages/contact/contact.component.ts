@@ -36,7 +36,7 @@ export class ContactComponent implements OnInit {
     },
     {
       type: 'Email',
-      value: 'dev@library.com',
+      value: 'info@knowlegenook.com',
     },
     {
       type: 'Phone',
@@ -44,7 +44,7 @@ export class ContactComponent implements OnInit {
     },
     {
       type: 'Website',
-      value: 'www.hlibrary.com',
+      value: 'www.knowlegeNook.com',
     },
   ]);
 }
